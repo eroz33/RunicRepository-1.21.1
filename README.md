@@ -1,25 +1,41 @@
+# Runic Repository
 
-Installation information
-=======
+**Runic Repository** is a Minecraft mod (NeoForge 1.21.1) that introduces a **magical storage system** inspired by popular tech-style mods such as Applied Energistics 2, but with an arcane twist. Instead of cables and digital storage disks, players will use **runes**, **tomes**, and **mana** to store and access items across their world.
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+## **Features**
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+- **Arcane Ash**: A basic crafting component and fuel source for the mod’s magic-powered machines.
+- **Library Core**: The “brain” block that manages your magical storage network.
+- **Tome Shelf**: Holds specialized **Storage Tomes** that store items.
+- **Runic Lectern**: Provides a user interface to view and manage all items in the network.
+- **Runic Chalk**: Used to create runic links between blocks—no cables required!
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+## **Goals & Roadmap**
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+1. **Early-Game Accessibility**
+    - Provide a simple entry point to magical storage, accessible even in early to mid-game.
+2. **Scalability & Mana Management**
+    - Encourage progression by tying storage expansion to mana consumption.
+3. **Immersive Magical Aesthetic**
+    - Replace mechanical or digital visuals with a library theme—books, shelves, lecterns, runes, and mana.
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+## **Planned Features**
+
+- **Arcane Generator / Mana Production**
+    - A source of mana that powers the entire network.
+- **Crafting Automation**
+    - Automated crafting using runic connections and specialized “magic benches.”
+- **Multiple Storage Tiers**
+    - Higher-tier tomes for large-scale storage.
+- **Rune-Based Connections**
+    - A unique, lore-friendly alternative to cables. Draw magic runes on the ground to link blocks within range.
+
+## **Feedback & Contributions**
+
+- **Issues & Suggestions:** Submit them on the project’s [GitHub Issue Tracker](#).
+- **Pull Requests:** Always welcome! Please ensure your code follows the project’s coding style.
+
+## **License**
+This mod is available under the MIT License.
+
+Enjoy building your magical library and harness the power of runes and tomes!
