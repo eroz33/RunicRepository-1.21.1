@@ -1,0 +1,21 @@
+{
+  "type" : "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item" : "minecraft:book"
+    },
+    "D" : {
+      "item" : "runicrepository:arcaneash"
+    }
+  },
+  "pattern" : [
+    "DDD",
+    "DBD",
+    "DDD"
+  ],
+  "result" : {
+    "count": 1,
+    "id": "runicrepository:arcane_primer"
+  }
+}
