@@ -44,6 +44,8 @@ public final class RunicRepository
         RunicItems.register(eventBus);
 
         eventBus.addListener(CommonSetup::onCommonSetup);
+        eventBus.addListener(CommonSetup::onRegister);
+        eventBus.addListener(CommonSetup::onRegisterCapabilities);
 
         API.deliver();
     }

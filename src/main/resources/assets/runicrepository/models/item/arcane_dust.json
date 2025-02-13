@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures" : {
-    "layer0" : "runicrepository:item/arcaneash"
+    "layer0" : "runicrepository:item/arcane_dust"
   }
 }

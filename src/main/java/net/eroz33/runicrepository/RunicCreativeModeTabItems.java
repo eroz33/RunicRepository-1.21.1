@@ -15,7 +15,7 @@ public class RunicCreativeModeTabItems {
 
     public static void register(RegisterEvent.RegisterHelper<CreativeModeTab> helper){
         helper.register(ResourceLocation.fromNamespaceAndPath(MOD_ID, "general"), CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup.runicrepository"))
+            .title(Component.translatable("creativetab.runicrepository"))
             .icon(() -> new ItemStack(RunicItems.ARCANE_PRIMER))
             .displayItems((params, output) -> append(output))
             .build());

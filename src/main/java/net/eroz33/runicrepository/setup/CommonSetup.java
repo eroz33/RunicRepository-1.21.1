@@ -5,6 +5,7 @@ import net.minecraft.core.registries.Registries;
 import net.neoforged.bus.api.Event;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.registries.RegisterEvent;
 
 public final class CommonSetup {
@@ -18,6 +19,10 @@ public final class CommonSetup {
     // Non-specific Mod Setup
     @SubscribeEvent
     public static void onCommonSetup(FMLCommonSetupEvent e){
+
+    }
+
+    public static void onRegisterCapabilities(final RegisterCapabilitiesEvent e) {
 
     }
 }

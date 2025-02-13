@@ -1,6 +1,6 @@
 {
-  "item.runicrepository.arcane_dust": "Arcane Ash",
+  "item.runicrepository.arcane_dust": "Arcane Dust",
   "item.runicrepository.arcane_primer": "Arcane Primer",
 
-  "creativetab.runicrepository.runic_items": "Runic Repository"
+  "creativetab.runicrepository": "Runic Repository"
 }
