@@ -22,6 +22,7 @@ public final class CommonSetup {
 
     }
 
+    // Register necessary capabilities
     public static void onRegisterCapabilities(final RegisterCapabilitiesEvent e) {
 
     }

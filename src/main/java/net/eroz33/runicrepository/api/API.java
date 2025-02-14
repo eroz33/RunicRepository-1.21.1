@@ -4,4 +4,7 @@ public class API {
     public static void deliver() {
 
     }
+
+    public static Object instance() {
+    }
 }

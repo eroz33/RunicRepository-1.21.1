@@ -1,6 +1,9 @@
 {
   "item.runicrepository.arcane_dust": "Arcane Dust",
-  "item.runicrepository.arcane_primer": "Arcane Primer",
+  "item.runicrepository.arcane_primer": "Primer",
+
+  "block.runicrepository.grimoire": "Grimoire",
+  "block.runicrepository.tome_shelf": "Tome Shelf",
 
   "creativetab.runicrepository": "Runic Repository"
 }

@@ -33,6 +33,7 @@ public final class RunicRepository
         // If we are on the client
         if (FMLEnvironment.dist == Dist.CLIENT){
             eventBus.addListener(ClientSetup::onClientSetup);
+            eventBus.addListener(ClientSetup::onRegisterKeymappings);
         }
 
         NeoForge.EVENT_BUS.register(new ServerSetup());
@@ -41,6 +42,7 @@ public final class RunicRepository
         container.registerConfig(ModConfig.Type.CLIENT, CLIENT_CONFIG.getSpec());
 
         RunicBlocks.register(eventBus);
+        RunicBlockEntities.register(eventBus);
         RunicItems.register(eventBus);
 
         eventBus.addListener(CommonSetup::onCommonSetup);
