@@ -1,6 +1,9 @@
 package net.eroz33.runicrepository.setup;
 
+import net.eroz33.runicrepository.RunicBlocks;
 import net.eroz33.runicrepository.RunicKeybindings;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.neoforged.bus.api.Event;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
@@ -14,6 +17,7 @@ public final class ClientSetup {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent e){
         // Preform Client only setup
+        ItemBlockRenderTypes.setRenderLayer(RunicBlocks.TOME_SHELF_BLOCK.get(), RenderType.translucent());
     }
 
     @SubscribeEvent

@@ -2,7 +2,10 @@ package net.eroz33.runicrepository.item;
 
 import net.eroz33.runicrepository.api.API;
 
-import net.minecraft.nbt.CompoundTag;
+import net.eroz33.runicrepository.api.RuneDataComponents;
+import net.eroz33.runicrepository.api.tome.IStorageTomeProvider;
+import net.eroz33.runicrepository.api.tome.ItemStorageType;
+import net.eroz33.runicrepository.api.tome.TomeUUID;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
@@ -13,7 +16,6 @@ import net.minecraft.world.level.Level;
 import java.util.UUID;
 
 public class ArcaneTomeItem extends Item implements IStorageTomeProvider {
-    public static final String NBT_ID = "ID";
     private final ItemStorageType type;
 
     public ArcaneTomeItem(ItemStorageType type) {
@@ -25,13 +27,14 @@ public class ArcaneTomeItem extends Item implements IStorageTomeProvider {
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int slot, boolean selected){
         super.inventoryTick(stack, level, entity, slot, selected);
 
-        if (!level.isClientSide && !stack.hasTag() && entity instanceof Player){
-            UUID id = UUID.randomUUID();
+        if (!level.isClientSide && !isValid(stack) && entity instanceof Player){
+            UUID new_id = UUID.randomUUID();
+            stack.set(RuneDataComponents.TOME_UUID_TYPE.value(), new TomeUUID(new_id));
 
-            API.instance().getStorageTomeManager((ServerLevel) level).set(id, API.instance().createDefaultTome((ServerLevel) level, getCapacity(stack), (Player) entity));
+            API.instance().getStorageTomeManager((ServerLevel) level).set(
+                    new_id,
+                    API.instance().createDefaultTome((ServerLevel) level, getCapacity(stack), (Player) entity));
             API.instance().getStorageTomeManager((ServerLevel) level).markForSaving();
-
-            setId(stack, id);
         }
     }
 
@@ -42,18 +45,23 @@ public class ArcaneTomeItem extends Item implements IStorageTomeProvider {
 
     @Override
     public UUID getId(ItemStack tome) {
-        return tome.getTag().getUUID(NBT_ID);
+        // retrieve the record form the data component
+        TomeUUID rec = tome.get(RuneDataComponents.TOME_UUID_TYPE.value());
+        return rec != null ? rec.id() : null;
     }
 
     @Override
     public void setId(ItemStack tome, UUID id) {
-        tome.setTag(new CompoundTag());
-        tome.getTag().putUUID(NBT_ID, id);
+        if (id == null) {
+            tome.remove(RuneDataComponents.TOME_UUID_TYPE.value());
+        } else {
+            tome.set(RuneDataComponents.TOME_UUID_TYPE.value(), new TomeUUID(id));
+        }
     }
 
     @Override
     public boolean isValid(ItemStack tome) {
-        return tome.hasTag() && tome.getTag().hasUUID(NBT_ID);
+        return tome.get(RuneDataComponents.TOME_UUID_TYPE.value()) != null;
     }
 
     @Override
@@ -62,7 +70,7 @@ public class ArcaneTomeItem extends Item implements IStorageTomeProvider {
     }
 
     @Override
-    public StorageType getType() {
-        return StorageType.ITEM;
+    public void markForSaving() {
+
     }
 }

@@ -20,16 +20,14 @@ public final class RunicBlocks {
     // Setup our Deferred Register for Blocks.
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MOD_ID);
 
-    public static final DeferredBlock<Block> GRIMOIRE_BLOCK = registerBlock("girmoire",
+    public static final DeferredBlock<Block> GRIMOIRE_BLOCK = registerBlock("grimoire",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4f)
-                    .requiresCorrectToolForDrops()
             ));
 
     public static final DeferredBlock<Block> TOME_SHELF_BLOCK = registerBlock("tome_shelf",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4f)
-                    .requiresCorrectToolForDrops()
             ));
 
     private RunicBlocks() { }

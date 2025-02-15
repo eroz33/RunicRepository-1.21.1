@@ -26,6 +26,11 @@ public class RunicCreativeModeTabItems {
         add(output, RunicItems.ARCANE_DUST);
         add(output, RunicItems.ARCANE_PRIMER);
 
+        add(output, RunicItems.RUNIC_TOME);
+        add(output, RunicItems.ARCANE_TOME);
+        add(output, RunicItems.WIZENED_TOME);
+        add(output, RunicItems.MYSTIC_TOME);
+
         addBlock(output, RunicBlocks.GRIMOIRE_BLOCK);
         addBlock(output, RunicBlocks.TOME_SHELF_BLOCK);
     }

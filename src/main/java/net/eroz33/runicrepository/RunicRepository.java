@@ -1,6 +1,7 @@
 package net.eroz33.runicrepository;
 
 import net.eroz33.runicrepository.api.API;
+import net.eroz33.runicrepository.api.RuneDataComponents;
 import net.eroz33.runicrepository.config.ClientConfig;
 import net.eroz33.runicrepository.config.ServerConfig;
 import net.eroz33.runicrepository.network.NetworkHandler;
@@ -44,6 +45,7 @@ public final class RunicRepository
         RunicBlocks.register(eventBus);
         RunicBlockEntities.register(eventBus);
         RunicItems.register(eventBus);
+        RuneDataComponents.REGISTRAR.register(eventBus);
 
         eventBus.addListener(CommonSetup::onCommonSetup);
         eventBus.addListener(CommonSetup::onRegister);
