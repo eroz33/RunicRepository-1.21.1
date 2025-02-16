@@ -1,10 +1,7 @@
-package net.eroz33.runicrepository;
+package net.eroz33.runicrepository.core;
 
-import net.eroz33.runicrepository.api.API;
-import net.eroz33.runicrepository.api.RuneDataComponents;
 import net.eroz33.runicrepository.config.ClientConfig;
 import net.eroz33.runicrepository.config.ServerConfig;
-import net.eroz33.runicrepository.network.NetworkHandler;
 import net.eroz33.runicrepository.setup.ClientSetup;
 import net.eroz33.runicrepository.setup.CommonSetup;
 import net.eroz33.runicrepository.setup.ServerSetup;
@@ -24,7 +21,6 @@ public final class RunicRepository
     public static final String MOD_ID = "runicrepository";
     public static final String NAME = "Runic Repository";
 
-    public static final NetworkHandler NETWORK_HANDLER = new NetworkHandler();
     public static final ServerConfig SERVER_CONFIG = new ServerConfig();
     public static final ClientConfig CLIENT_CONFIG = new ClientConfig();
 
@@ -45,12 +41,10 @@ public final class RunicRepository
         RunicBlocks.register(eventBus);
         RunicBlockEntities.register(eventBus);
         RunicItems.register(eventBus);
-        RuneDataComponents.REGISTRAR.register(eventBus);
 
         eventBus.addListener(CommonSetup::onCommonSetup);
         eventBus.addListener(CommonSetup::onRegister);
         eventBus.addListener(CommonSetup::onRegisterCapabilities);
 
-        API.deliver();
     }
 }

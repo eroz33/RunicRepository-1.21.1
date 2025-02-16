@@ -1,4 +1,4 @@
-package net.eroz33.runicrepository;
+package net.eroz33.runicrepository.core;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.RegisterEvent;
 
-import static net.eroz33.runicrepository.RunicRepository.MOD_ID;
+import static net.eroz33.runicrepository.core.RunicRepository.MOD_ID;
 
 public class RunicCreativeModeTabItems {
     private RunicCreativeModeTabItems(){ }
@@ -25,11 +25,6 @@ public class RunicCreativeModeTabItems {
     public static void append(CreativeModeTab.Output output){
         add(output, RunicItems.ARCANE_DUST);
         add(output, RunicItems.ARCANE_PRIMER);
-
-        add(output, RunicItems.RUNIC_TOME);
-        add(output, RunicItems.ARCANE_TOME);
-        add(output, RunicItems.WIZENED_TOME);
-        add(output, RunicItems.MYSTIC_TOME);
 
         addBlock(output, RunicBlocks.GRIMOIRE_BLOCK);
         addBlock(output, RunicBlocks.TOME_SHELF_BLOCK);

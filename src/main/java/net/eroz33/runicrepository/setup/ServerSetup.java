@@ -1,6 +1,6 @@
 package net.eroz33.runicrepository.setup;
 
-import net.eroz33.runicrepository.RunicRepository;
+import net.eroz33.runicrepository.core.RunicRepository;
 import net.minecraft.commands.Commands;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;

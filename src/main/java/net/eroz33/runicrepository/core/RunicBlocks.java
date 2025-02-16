@@ -1,20 +1,16 @@
-package net.eroz33.runicrepository;
+package net.eroz33.runicrepository.core;
 
-import net.eroz33.runicrepository.block.GrimoireBlock;
-import net.eroz33.runicrepository.block.TomeShelfBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
-import java.util.function.ToIntFunction;
 
-import static net.eroz33.runicrepository.RunicRepository.MOD_ID;
+import static net.eroz33.runicrepository.core.RunicRepository.MOD_ID;
 
 public final class RunicBlocks {
     // Setup our Deferred Register for Blocks.

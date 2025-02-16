@@ -1,16 +1,19 @@
 package net.eroz33.runicrepository.blockentity;
 
-import net.eroz33.runicrepository.RunicBlockEntities;
+
 import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
-public class TomeShelfBlockEntity extends BaseBlockEntity implements IItemHandler {
-    // Internal invenetory
-    private final ItemStackHandler inventory = new ItemStackHandler(6){
+import static net.eroz33.runicrepository.core.RunicBlockEntities.TOME_SHELF_BLOCK_ENTITY;
+
+
+public class TomeShelfBlockEntity extends BlockEntity {
+    private final int SIZE = 6;
+
+    private final ItemStackHandler inventory = new ItemStackHandler(SIZE){
         @Override
         protected void onContentsChanged(int slot){
             setChanged();
@@ -22,51 +25,30 @@ public class TomeShelfBlockEntity extends BaseBlockEntity implements IItemHandle
         }
     };
 
-    // Example field: maybe it holds a storage tome's unique identifier.
-    private String storageTomeId = "";
-
-    public TomeShelfBlockEntity(BlockPos pos, BlockState state) {
-        super(RunicBlockEntities.TOME_SHELF_BLOCK_ENTITY.get(), pos, state);
+    public TomeShelfBlockEntity(BlockPos pos, BlockState blockState) {
+        super(TOME_SHELF_BLOCK_ENTITY.get(), pos, blockState);
     }
 
-    @Override
-    protected void readCustomData(CompoundTag tag) {
-        if (tag.contains("Inventory")) {
-            inventory.deserializeNBT(tag.getCompound("Inventory"));
-        }
-    }
-
-    @Override
-    protected void writeCustomData(CompoundTag tag) {
-        tag.put("Inventory", inventory.serializeNBT());
-    }
-
-    @Override
     public int getSlots() {
         return inventory.getSlots();
     }
 
-    @Override
     public ItemStack getStackInSlot(int slot) {
         return inventory.getStackInSlot(slot);
     }
 
-    @Override
     public ItemStack insertItem(int slot, ItemStack stack, boolean simulate) {
         return inventory.insertItem(slot, stack, simulate);
     }
 
-    @Override
     public ItemStack extractItem(int slot, int amount, boolean simulate) {
         return inventory.extractItem(slot, amount, simulate);
     }
 
-    @Override
     public int getSlotLimit(int slot) {
         return inventory.getSlotLimit(slot);
     }
 
-    @Override
     public boolean isItemValid(int slot, ItemStack stack) {
         return inventory.isItemValid(slot, stack);
     }
