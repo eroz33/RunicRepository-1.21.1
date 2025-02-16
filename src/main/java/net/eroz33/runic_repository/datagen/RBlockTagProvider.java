@@ -23,5 +23,11 @@ public class RBlockTagProvider extends BlockTagsProvider {
         this.tag(RTags.Blocks.RUNIC_NETWORK)
                 .add(RBlocks.GRIMOIRE_BLOCK.get())
                 .add(RBlocks.TOME_SHELF_BLOCK.get());
+
+        this.tag(BlockTags.LOGS_THAT_BURN)
+                .add(RBlocks.ARCANE_LOG.get())
+                .add(RBlocks.ARCANE_WOOD.get())
+                .add(RBlocks.STRIPPED_ARCANE_LOG.get())
+                .add(RBlocks.STRIPPED_ARCANE_WOOD.get());
     }
 }

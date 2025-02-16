@@ -29,6 +29,15 @@ public class RItemModelProvider extends ItemModelProvider {
         basicItem(RItems.RUNIC_CORE_B.get());
 
         horizontalBlockItem(RBlocks.TOME_SHELF_BLOCK);
+
+        saplingItem(RBlocks.ARCANE_SAPLING);
+
+    }
+
+    private ItemModelBuilder saplingItem(DeferredBlock<Block> item){
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/generated")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(MOD_ID, "block/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder horizontalBlockItem(DeferredBlock<Block> block){

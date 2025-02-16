@@ -1,17 +1,20 @@
 package net.eroz33.runic_repository.datagen;
 
+import net.eroz33.runic_repository.block.RBlocks;
 import net.eroz33.runic_repository.item.RItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.*;
+import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
+
+import static net.eroz33.runic_repository.core.RR.MOD_ID;
 
 public class RRecipeProvider extends RecipeProvider implements IConditionBuilder {
     public RRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
@@ -20,6 +23,10 @@ public class RRecipeProvider extends RecipeProvider implements IConditionBuilder
 
     @Override
     protected void buildRecipes(@NotNull RecipeOutput recipeOutput){
+        List<ItemLike> ARCANE_DUST_SMELTABLES = List.of(RBlocks.ARCANE_LOG,
+                RBlocks.ARCANE_WOOD, RBlocks.STRIPPED_ARCANE_LOG, RBlocks.STRIPPED_ARCANE_WOOD);
+        
+        
         // Arcane Primer Recipe
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, RItems.ARCANE_PRIMER.get())
                 .pattern("DDD")
@@ -64,6 +71,39 @@ public class RRecipeProvider extends RecipeProvider implements IConditionBuilder
                 .define('N', Items.ECHO_SHARD)
                 .define('R', RItems.RUNIC_CORE_P)
                 .unlockedBy("has_runic_core_p", has(RItems.RUNIC_CORE_P.get())).save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, RBlocks.ARCANE_PLANKS.get(), 4)
+                .requires(RBlocks.ARCANE_LOG.get())
+                .unlockedBy("has_arcane_log", has(RBlocks.ARCANE_LOG.get())).save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, RBlocks.ARCANE_PLANKS.get(), 4)
+                .requires(RBlocks.STRIPPED_ARCANE_LOG.get())
+                .unlockedBy("has_stripped_arcane_log", has(RBlocks.ARCANE_LOG.get())).save(recipeOutput, "runic_repository:arcane_planks_2");
+
+
+        //oreSmelting(recipeOutput, ARCANE_DUST_SMELTABLES, RecipeCategory.MISC, RItems.ARCANE_DUST.get(), 0.25f, 200, "arcane_dust");
+        oreBlasting(recipeOutput, ARCANE_DUST_SMELTABLES, RecipeCategory.MISC, RItems.ARCANE_DUST.get(), 0.25f, 100, "arcane_dust");
+
+    }
+
+    protected static void oreSmelting(RecipeOutput pRecipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
+                                      float pExperience, int pCookingTIme, String pGroup) {
+        oreCooking(pRecipeOutput, RecipeSerializer.SMELTING_RECIPE, SmeltingRecipe::new, pIngredients, pCategory, pResult,
+                pExperience, pCookingTIme, pGroup, "_from_smelting");
+    }
+
+    protected static void oreBlasting(RecipeOutput pRecipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
+                                      float pExperience, int pCookingTime, String pGroup) {
+        oreCooking(pRecipeOutput, RecipeSerializer.BLASTING_RECIPE, BlastingRecipe::new, pIngredients, pCategory, pResult,
+                pExperience, pCookingTime, pGroup, "_from_blasting");
+    }
+
+    protected static <T extends AbstractCookingRecipe> void oreCooking(RecipeOutput pRecipeOutput, RecipeSerializer<T> pCookingSerializer, AbstractCookingRecipe.Factory<T> factory,
+                                                                       List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup, String pRecipeName) {
+        for(ItemLike itemlike : pIngredients) {
+            SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), pCategory, pResult, pExperience, pCookingTime, pCookingSerializer, factory).group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike))
+                    .save(pRecipeOutput, MOD_ID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
+        }
     }
 
 }

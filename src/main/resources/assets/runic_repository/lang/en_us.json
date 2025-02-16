@@ -3,6 +3,14 @@
   "item.runic_repository.arcane_primer": "Primer",
   "item.runic_repository.arcane_quill": "Arcane Quill",
 
+  "block.runic_repository.arcane_log": "Arcane Log",
+  "block.runic_repository.arcane_wood": "Arcane Wood",
+  "block.runic_repository.stripped_arcane_log": "Stripped Arcane Log",
+  "block.runic_repository.stripped_arcane_wood": "Stripped Arcane Wood",
+  "block.runic_repository.arcane_leaves": "Arcane Leaves",
+
+  "block.runic_repository.arcane_sapling": "Arcane Sapling",
+
   "item.runic_repository.runic_core_g": "Runic Core (Green)",
   "item.runic_repository.runic_core_r": "Runic Core (Red)",
   "item.runic_repository.runic_core_p": "Runic Core (Purple)",

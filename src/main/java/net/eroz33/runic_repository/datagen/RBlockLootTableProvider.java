@@ -17,6 +17,17 @@ public class RBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+        // Arcane Trees
+        dropSelf(RBlocks.ARCANE_LOG.get());
+        dropSelf(RBlocks.ARCANE_WOOD.get());
+        dropSelf(RBlocks.STRIPPED_ARCANE_LOG.get());
+        dropSelf(RBlocks.STRIPPED_ARCANE_WOOD.get());
+        dropSelf(RBlocks.ARCANE_PLANKS.get());
+        dropSelf(RBlocks.ARCANE_SAPLING.get());
+        this.add(RBlocks.ARCANE_LEAVES.get(), block ->
+                createLeavesDrops(block, RBlocks.ARCANE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+        // Runic Network
         dropSelf(RBlocks.GRIMOIRE_BLOCK.get());
         dropSelf(RBlocks.TOME_SHELF_BLOCK.get());
 
