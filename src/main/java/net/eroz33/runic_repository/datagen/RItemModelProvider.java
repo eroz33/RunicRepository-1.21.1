@@ -17,5 +17,9 @@ public class RItemModelProvider extends ItemModelProvider {
         basicItem(RItems.ARCANE_DUST.get());
         basicItem(RItems.ARCANE_PRIMER.get());
         basicItem(RItems.ARCANE_QUILL.get());
+        basicItem(RItems.RUNIC_CORE_G.get());
+        basicItem(RItems.RUNIC_CORE_R.get());
+        basicItem(RItems.RUNIC_CORE_P.get());
+        basicItem(RItems.RUNIC_CORE_B.get());
     }
 }

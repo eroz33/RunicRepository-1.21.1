@@ -26,6 +26,11 @@ public class RCreativeModeTabs {
                         pOutput.accept(RItems.ARCANE_PRIMER);
                         pOutput.accept(RItems.ARCANE_QUILL);
 
+                        pOutput.accept(RItems.RUNIC_CORE_G);
+                        pOutput.accept(RItems.RUNIC_CORE_R);
+                        pOutput.accept(RItems.RUNIC_CORE_P);
+                        pOutput.accept(RItems.RUNIC_CORE_B);
+
                         pOutput.accept(RBlocks.GRIMOIRE_BLOCK);
                         pOutput.accept(RBlocks.TOME_SHELF_BLOCK);
                     })

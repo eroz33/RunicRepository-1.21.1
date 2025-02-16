@@ -3,6 +3,11 @@
   "item.runic_repository.arcane_primer": "Primer",
   "item.runic_repository.arcane_quill": "Arcane Quill",
 
+  "item.runic_repository.runic_core_g": "Runic Core (Green)",
+  "item.runic_repository.runic_core_r": "Runic Core (Red)",
+  "item.runic_repository.runic_core_p": "Runic Core (Purple)",
+  "item.runic_repository.runic_core_b": "Runic Core (Blue)",
+
   "block.runic_repository.grimoire_block": "Grimoire",
   "block.runic_repository.tome_shelf_block": "Tome Shelf",
 

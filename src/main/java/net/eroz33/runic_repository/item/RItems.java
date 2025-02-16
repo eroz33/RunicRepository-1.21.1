@@ -13,6 +13,12 @@ public class RItems {
 
     // Create Items
     public static final DeferredItem<Item> ARCANE_DUST = ITEMS.registerSimpleItem("arcane_dust");
+    public static final DeferredItem<Item> RUNIC_CORE_G = ITEMS.registerSimpleItem("runic_core_g");
+    public static final DeferredItem<Item> RUNIC_CORE_R = ITEMS.registerSimpleItem("runic_core_r");
+    public static final DeferredItem<Item> RUNIC_CORE_P = ITEMS.registerSimpleItem("runic_core_p");
+    public static final DeferredItem<Item> RUNIC_CORE_B = ITEMS.registerSimpleItem("runic_core_b");
+
+
     public static final DeferredItem<Item> ARCANE_PRIMER =
             ITEMS.registerItem("arcane_primer", Item::new, new Item.Properties());
     public static final DeferredItem<Item> ARCANE_QUILL =

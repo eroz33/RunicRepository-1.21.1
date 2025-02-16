@@ -28,6 +28,42 @@ public class RRecipeProvider extends RecipeProvider implements IConditionBuilder
                 .define('D', RItems.ARCANE_DUST)
                 .define('B', Items.BOOK)
                 .unlockedBy("has_arcane_dust", has(RItems.ARCANE_DUST.get())).save(recipeOutput);
+        // Arcane Core tier 1 Recipe
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, RItems.RUNIC_CORE_G.get())
+                .pattern("DRD")
+                .pattern("RGR")
+                .pattern("DRD")
+                .define('D', RItems.ARCANE_DUST)
+                .define('G', Items.GOLD_INGOT)
+                .define('R', Items.REDSTONE)
+                .unlockedBy("has_arcane_dust", has(RItems.ARCANE_DUST.get())).save(recipeOutput);
+        // Arcane Core tier 2 Recipe
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, RItems.RUNIC_CORE_R.get())
+                .pattern("NDN")
+                .pattern("RNR")
+                .pattern("DRD")
+                .define('D', RItems.ARCANE_DUST)
+                .define('N', Items.NETHER_WART)
+                .define('R', RItems.RUNIC_CORE_G)
+                .unlockedBy("has_runic_core_g", has(RItems.RUNIC_CORE_G.get())).save(recipeOutput);
+        // Arcane Core tier 3 Recipe
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, RItems.RUNIC_CORE_P.get())
+                .pattern("NDN")
+                .pattern("RNR")
+                .pattern("DRD")
+                .define('D', RItems.ARCANE_DUST)
+                .define('N', Items.END_STONE)
+                .define('R', RItems.RUNIC_CORE_R)
+                .unlockedBy("has_runic_core_r", has(RItems.RUNIC_CORE_R.get())).save(recipeOutput);
+        // Arcane Core tier 4 Recipe
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, RItems.RUNIC_CORE_B.get())
+                .pattern("NDN")
+                .pattern("RNR")
+                .pattern("DRD")
+                .define('D', RItems.ARCANE_DUST)
+                .define('N', Items.ECHO_SHARD)
+                .define('R', RItems.RUNIC_CORE_P)
+                .unlockedBy("has_runic_core_p", has(RItems.RUNIC_CORE_P.get())).save(recipeOutput);
     }
 
 }
