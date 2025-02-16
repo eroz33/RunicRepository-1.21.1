@@ -1,5 +1,7 @@
 package net.eroz33.runic_repository.block;
 
+import net.eroz33.runic_repository.block.runic_network.GrimoireBlock;
+import net.eroz33.runic_repository.block.runic_network.TomeShelfBlock;
 import net.eroz33.runic_repository.item.RItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -19,7 +21,7 @@ public final class RBlocks {
             DeferredRegister.createBlocks(MOD_ID);
 
     public static final DeferredBlock<Block> GRIMOIRE_BLOCK = registerBlock("grimoire_block",
-            () -> new Block(BlockBehaviour.Properties.of().strength(2f)));
+            () -> new GrimoireBlock(BlockBehaviour.Properties.of().strength(2f)));
     public static final DeferredBlock<Block> TOME_SHELF_BLOCK = registerBlock("tome_shelf_block",
             () -> new TomeShelfBlock(BlockBehaviour.Properties.of().strength(2f)));
 

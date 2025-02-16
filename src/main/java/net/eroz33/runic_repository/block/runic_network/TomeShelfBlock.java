@@ -1,7 +1,6 @@
-package net.eroz33.runic_repository.block;
+package net.eroz33.runic_repository.block.runic_network;
 
 import com.mojang.serialization.MapCodec;
-import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
@@ -12,7 +11,7 @@ import org.jetbrains.annotations.Nullable;
 public class TomeShelfBlock extends HorizontalDirectionalBlock {
     public static final MapCodec<TomeShelfBlock> CODEC = simpleCodec(TomeShelfBlock::new);
 
-    protected TomeShelfBlock(Properties properties) {
+    public TomeShelfBlock(Properties properties) {
         super(properties);
     }
 
