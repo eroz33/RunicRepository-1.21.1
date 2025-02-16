@@ -1,5 +1,6 @@
 package net.eroz33.runic_repository.item;
 
+import net.eroz33.runic_repository.util.RTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
@@ -16,7 +17,7 @@ public class ArcaneQuillItem extends Item {
         Level level = context.getLevel();
 
         if (!level.isClientSide()){
-            if(level.getBlockState(context.getClickedPos()).is(BlockTags.LOGS)){
+            if(level.getBlockState(context.getClickedPos()).is(RTags.Blocks.RUNIC_NETWORK)){
                 level.destroyBlock(context.getClickedPos(), true, context.getPlayer());
             }
         }

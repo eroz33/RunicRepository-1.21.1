@@ -1,5 +1,7 @@
 package net.eroz33.runic_repository.datagen;
 
+import net.eroz33.runic_repository.block.RBlocks;
+import net.eroz33.runic_repository.util.RTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -18,6 +20,8 @@ public class RBlockTagProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-
+        this.tag(RTags.Blocks.RUNIC_NETWORK)
+                .add(RBlocks.GRIMOIRE_BLOCK.get())
+                .add(RBlocks.TOME_SHELF_BLOCK.get());
     }
 }
