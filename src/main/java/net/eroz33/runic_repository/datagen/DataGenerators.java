@@ -38,5 +38,7 @@ public class DataGenerators {
 
         generator.addProvider(event.includeClient(), new RItemModelProvider(packOutput,existingFileHelper));
         generator.addProvider(event.includeClient(), new RBlockStateProvider(packOutput,existingFileHelper));
+
+        generator.addProvider(event.includeServer(), new RWorldGenProvider(packOutput, lookupProvider));
     }
 }
