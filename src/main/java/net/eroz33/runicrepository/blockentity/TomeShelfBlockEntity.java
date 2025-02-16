@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
-import static net.eroz33.runicrepository.core.RunicBlockEntities.TOME_SHELF_BLOCK_ENTITY;
+import static net.eroz33.runicrepository.core.RBlockEntities.TOME_SHELF_BLOCK_ENTITY;
 
 
 public class TomeShelfBlockEntity extends BlockEntity {

@@ -10,9 +10,9 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-import static net.eroz33.runicrepository.core.RunicRepository.MOD_ID;
+import static net.eroz33.runicrepository.core.RR.MOD_ID;
 
-public final class RunicBlocks {
+public final class RBlocks {
     // Setup our Deferred Register for Blocks.
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MOD_ID);
 
@@ -26,14 +26,14 @@ public final class RunicBlocks {
                     .strength(4f)
             ));
 
-    private RunicBlocks() { }
+    private RBlocks() { }
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }
 
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block){
-        RunicItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        RItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {

@@ -1,6 +1,6 @@
 package net.eroz33.runicrepository.setup;
 
-import net.eroz33.runicrepository.core.RunicCreativeModeTabItems;
+import net.eroz33.runicrepository.core.RCreativeModeTab;
 import net.minecraft.core.registries.Registries;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -12,7 +12,7 @@ public final class CommonSetup {
 
     @SubscribeEvent
     public static void onRegister(final RegisterEvent e) {
-        e.register(Registries.CREATIVE_MODE_TAB, RunicCreativeModeTabItems::register);
+        e.register(Registries.CREATIVE_MODE_TAB, RCreativeModeTab::register);
     }
 
     // Non-specific Mod Setup

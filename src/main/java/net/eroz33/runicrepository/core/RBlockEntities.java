@@ -11,9 +11,9 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-import static net.eroz33.runicrepository.core.RunicRepository.MOD_ID;
+import static net.eroz33.runicrepository.core.RR.MOD_ID;
 
-public class RunicBlockEntities {
+public class RBlockEntities {
 
     // Setup our Deferred Register for Block Entity Types
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
@@ -23,7 +23,7 @@ public class RunicBlockEntities {
             "grimoire",
             () -> BlockEntityType.Builder.of(
                     GrimoireBlockEntity::new,
-                    RunicBlocks.GRIMOIRE_BLOCK.get()
+                    RBlocks.GRIMOIRE_BLOCK.get()
             )
             .build(null)
     );
@@ -31,13 +31,13 @@ public class RunicBlockEntities {
             "tome_shelf",
             () -> BlockEntityType.Builder.of(
                             TomeShelfBlockEntity::new,
-                            RunicBlocks.TOME_SHELF_BLOCK.get()
+                            RBlocks.TOME_SHELF_BLOCK.get()
                     )
                     .build(null)
     );
 
     // Constructor
-    private RunicBlockEntities() { }
+    private RBlockEntities() { }
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

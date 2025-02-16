@@ -15,8 +15,8 @@ import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.common.NeoForge;
 
 
-@Mod(RunicRepository.MOD_ID)
-public final class RunicRepository
+@Mod(RR.MOD_ID)
+public final class RR
 {
     public static final String MOD_ID = "runicrepository";
     public static final String NAME = "Runic Repository";
@@ -25,7 +25,7 @@ public final class RunicRepository
     public static final ClientConfig CLIENT_CONFIG = new ClientConfig();
 
 
-    public RunicRepository(IEventBus eventBus, ModContainer container)
+    public RR(IEventBus eventBus, ModContainer container)
     {
         // If we are on the client
         if (FMLEnvironment.dist == Dist.CLIENT){
@@ -38,9 +38,9 @@ public final class RunicRepository
         container.registerConfig(ModConfig.Type.SERVER, SERVER_CONFIG.getSpec());
         container.registerConfig(ModConfig.Type.CLIENT, CLIENT_CONFIG.getSpec());
 
-        RunicBlocks.register(eventBus);
-        RunicBlockEntities.register(eventBus);
-        RunicItems.register(eventBus);
+        RBlocks.register(eventBus);
+        RBlockEntities.register(eventBus);
+        RItems.register(eventBus);
 
         eventBus.addListener(CommonSetup::onCommonSetup);
         eventBus.addListener(CommonSetup::onRegister);

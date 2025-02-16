@@ -8,9 +8,9 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import static net.eroz33.runicrepository.core.RunicRepository.MOD_ID;
+import static net.eroz33.runicrepository.core.RR.MOD_ID;
 
-public class RunicItems {
+public class RItems {
     // Setup our Deferred Register
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(BuiltInRegistries.ITEM, MOD_ID);
 
@@ -18,7 +18,7 @@ public class RunicItems {
     public static final DeferredHolder<Item, ArcaneDustItem> ARCANE_DUST = ITEMS.register("arcane_dust", ArcaneDustItem::new);
     public static final DeferredHolder<Item, ArcanePrimerItem> ARCANE_PRIMER = ITEMS.register("arcane_primer", ArcanePrimerItem::new);
 
-    private RunicItems() { }
+    private RItems() { }
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

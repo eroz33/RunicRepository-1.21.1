@@ -9,25 +9,25 @@ import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.RegisterEvent;
 
-import static net.eroz33.runicrepository.core.RunicRepository.MOD_ID;
+import static net.eroz33.runicrepository.core.RR.MOD_ID;
 
-public class RunicCreativeModeTabItems {
-    private RunicCreativeModeTabItems(){ }
+public class RCreativeModeTab {
+    private RCreativeModeTab(){ }
 
     public static void register(RegisterEvent.RegisterHelper<CreativeModeTab> helper){
         helper.register(ResourceLocation.fromNamespaceAndPath(MOD_ID, "general"), CreativeModeTab.builder()
             .title(Component.translatable("creativetab.runicrepository"))
-            .icon(() -> new ItemStack(RunicItems.ARCANE_PRIMER))
+            .icon(() -> new ItemStack(RItems.ARCANE_PRIMER))
             .displayItems((params, output) -> append(output))
             .build());
     }
 
     public static void append(CreativeModeTab.Output output){
-        add(output, RunicItems.ARCANE_DUST);
-        add(output, RunicItems.ARCANE_PRIMER);
+        add(output, RItems.ARCANE_DUST);
+        add(output, RItems.ARCANE_PRIMER);
 
-        addBlock(output, RunicBlocks.GRIMOIRE_BLOCK);
-        addBlock(output, RunicBlocks.TOME_SHELF_BLOCK);
+        addBlock(output, RBlocks.GRIMOIRE_BLOCK);
+        addBlock(output, RBlocks.TOME_SHELF_BLOCK);
     }
 
     private static void add(CreativeModeTab.Output output, DeferredHolder<Item, ? extends Item> i){
