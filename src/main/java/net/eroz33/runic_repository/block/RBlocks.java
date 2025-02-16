@@ -21,7 +21,7 @@ public final class RBlocks {
     public static final DeferredBlock<Block> GRIMOIRE_BLOCK = registerBlock("grimoire_block",
             () -> new Block(BlockBehaviour.Properties.of().strength(2f)));
     public static final DeferredBlock<Block> TOME_SHELF_BLOCK = registerBlock("tome_shelf_block",
-            () -> new Block(BlockBehaviour.Properties.of().strength(2f)));
+            () -> new TomeShelfBlock(BlockBehaviour.Properties.of().strength(2f)));
 
     private RBlocks() { }
 
