@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import java.util.List;
 
 public abstract class RunicBlock extends Block {
-    public static final List<BlockPos> BOOKSHELF_OFFSETS = BlockPos.betweenClosedStream(-3, -1, -3, 3, 3, 3)
+    public static final List<BlockPos> BOOKSHELF_OFFSETS = BlockPos.betweenClosedStream(-4, -4, -4, 4, 4, 4)
             .filter(p_341357_ -> Math.abs(p_341357_.getX()) == 2 || Math.abs(p_341357_.getZ()) == 2)
             .map(BlockPos::immutable)
             .toList();

@@ -22,6 +22,11 @@ public class RCreativeModeTabs {
                     .title(Component.translatable("creativetab.runic_repository"))
                     .icon(() -> new ItemStack(RItems.ARCANE_DUST.get()))
                     .displayItems((pParams, pOutput) -> {
+                        pOutput.accept(RBlocks.ARCANE_SAPLING);
+                        pOutput.accept(RBlocks.ARCANE_LOG);
+                        pOutput.accept(RBlocks.ARCANE_LEAVES);
+                        pOutput.accept(RBlocks.ARCANE_PLANKS);
+
                         pOutput.accept(RItems.ARCANE_DUST);
                         pOutput.accept(RItems.ARCANE_PRIMER);
                         pOutput.accept(RItems.ARCANE_QUILL);

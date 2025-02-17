@@ -1,7 +1,7 @@
 package net.eroz33.runic_repository.core;
 
 import net.eroz33.runic_repository.block.RBlocks;
-import net.eroz33.runic_repository.blockentity.RBlockEntities;
+import net.eroz33.runic_repository.block.entity.RBlockEntity;
 import net.eroz33.runic_repository.config.ClientConfig;
 import net.eroz33.runic_repository.config.ServerConfig;
 import net.eroz33.runic_repository.item.RItems;
@@ -42,8 +42,8 @@ public final class RR
         container.registerConfig(ModConfig.Type.CLIENT, CLIENT_CONFIG.getSpec());
 
         RBlocks.register(eventBus);
-        RBlockEntities.register(eventBus);
         RItems.register(eventBus);
+        RBlockEntity.register(eventBus);
         RCreativeModeTabs.register(eventBus);
 
         eventBus.addListener(CommonSetup::onCommonSetup);

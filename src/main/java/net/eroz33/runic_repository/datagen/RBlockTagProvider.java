@@ -5,6 +5,7 @@ import net.eroz33.runic_repository.util.RTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -22,6 +23,9 @@ public class RBlockTagProvider extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         this.tag(RTags.Blocks.RUNIC_NETWORK)
                 .add(RBlocks.GRIMOIRE_BLOCK.get())
+                .add(RBlocks.TOME_SHELF_BLOCK.get());
+
+        this.tag(BlockTags.ENCHANTMENT_POWER_TRANSMITTER)
                 .add(RBlocks.TOME_SHELF_BLOCK.get());
 
         this.tag(BlockTags.LOGS_THAT_BURN)
