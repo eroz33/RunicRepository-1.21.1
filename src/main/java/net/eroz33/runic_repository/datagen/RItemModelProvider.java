@@ -28,6 +28,12 @@ public class RItemModelProvider extends ItemModelProvider {
         basicItem(RItems.RUNIC_CORE_P.get());
         basicItem(RItems.RUNIC_CORE_B.get());
 
+        basicItem(RItems.ARCANE_TOME_GREEN.get());
+        basicItem(RItems.ARCANE_TOME_RED.get());
+        basicItem(RItems.ARCANE_TOME_PURPLE.get());
+        basicItem(RItems.ARCANE_TOME_BLUE.get());
+
+
         horizontalBlockItem(RBlocks.TOME_SHELF_BLOCK);
 
         saplingItem(RBlocks.ARCANE_SAPLING);

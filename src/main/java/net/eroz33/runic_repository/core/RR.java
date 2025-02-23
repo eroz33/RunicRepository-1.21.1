@@ -5,6 +5,8 @@ import net.eroz33.runic_repository.block.entity.RBlockEntity;
 import net.eroz33.runic_repository.config.ClientConfig;
 import net.eroz33.runic_repository.config.ServerConfig;
 import net.eroz33.runic_repository.item.RItems;
+import net.eroz33.runic_repository.item.tomes.StorageTomeComponents;
+import net.eroz33.runic_repository.menu.RMenus;
 import net.eroz33.runic_repository.setup.ClientSetup;
 import net.eroz33.runic_repository.setup.CommonSetup;
 import net.eroz33.runic_repository.setup.ServerSetup;
@@ -45,10 +47,13 @@ public final class RR
         RItems.register(eventBus);
         RBlockEntity.register(eventBus);
         RCreativeModeTabs.register(eventBus);
+        RMenus.register(eventBus);
 
         eventBus.addListener(CommonSetup::onCommonSetup);
         eventBus.addListener(CommonSetup::onRegister);
         eventBus.addListener(CommonSetup::onRegisterCapabilities);
+
+        StorageTomeComponents.init(eventBus);
 
     }
 }

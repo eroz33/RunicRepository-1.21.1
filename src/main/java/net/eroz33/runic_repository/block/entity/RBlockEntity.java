@@ -5,6 +5,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
@@ -18,6 +19,10 @@ public class RBlockEntity {
     public static final Supplier<BlockEntityType<TomeShelfBlockEntity>> TOME_SHELF_BE =
             BLOCK_ENTITIES.register("tome_shelf_be", () -> BlockEntityType.Builder.of(
                     TomeShelfBlockEntity::new, RBlocks.TOME_SHELF_BLOCK.get()).build(null));
+
+    public static final Supplier<BlockEntityType<GrimoireBlockEntity>> GRIMOIRE_BE =
+            BLOCK_ENTITIES.register("grimoire_be", () -> BlockEntityType.Builder.of(
+                    GrimoireBlockEntity::new, RBlocks.GRIMOIRE_BLOCK.get()).build(null));
 
     public static void register(IEventBus eventBus){
         BLOCK_ENTITIES.register(eventBus);

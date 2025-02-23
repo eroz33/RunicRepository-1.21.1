@@ -5,6 +5,7 @@ import net.eroz33.runic_repository.item.RItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
@@ -82,7 +83,7 @@ public class RRecipeProvider extends RecipeProvider implements IConditionBuilder
 
 
         //oreSmelting(recipeOutput, ARCANE_DUST_SMELTABLES, RecipeCategory.MISC, RItems.ARCANE_DUST.get(), 0.25f, 200, "arcane_dust");
-        oreBlasting(recipeOutput, ARCANE_DUST_SMELTABLES, RecipeCategory.MISC, RItems.ARCANE_DUST.get(), 0.25f, 100, "arcane_dust");
+        oreBlasting(recipeOutput, ARCANE_DUST_SMELTABLES, RecipeCategory.MISC, new ItemStack(RItems.ARCANE_DUST.get(), 4).getItem(), 0.25f, 100, "arcane_dust");
 
     }
 

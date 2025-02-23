@@ -74,7 +74,7 @@ public class TomeShelfBlock extends BaseEntityBlock {
     protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
         if(state.getBlock() != newState.getBlock()){
             if(level.getBlockEntity(pos) instanceof TomeShelfBlockEntity tomeShelfBlockEntity) {
-                Containers.dropContents(level, pos, tomeShelfBlockEntity);
+                tomeShelfBlockEntity.drops();
                 level.updateNeighbourForOutputSignal(pos, this);
             }
         }
@@ -85,11 +85,12 @@ public class TomeShelfBlock extends BaseEntityBlock {
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level,
                                               BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         if (level.getBlockEntity(pos) instanceof TomeShelfBlockEntity tomeShelfBlockEntity){
-            if (!stack.is(RItems.ARCANE_PRIMER)){
+            // TODO: Use Tags instead
+            if (!stack.is(RItems.ARCANE_TOME_GREEN)){
                 return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
             } else {
-                if (tomeShelfBlockEntity.count() < tomeShelfBlockEntity.getContainerSize()){
-                    tomeShelfBlockEntity.setItem(tomeShelfBlockEntity.count(), stack);
+                if (tomeShelfBlockEntity.count() < tomeShelfBlockEntity.inventory.getSlots()){
+                    tomeShelfBlockEntity.inventory.insertItem(tomeShelfBlockEntity.count(), stack.copy(), false);
                     stack.shrink(1);
                     level.playSound(player, pos, SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.BLOCKS, 1f, 2f);
                 }
@@ -101,8 +102,8 @@ public class TomeShelfBlock extends BaseEntityBlock {
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         if (level.getBlockEntity(pos) instanceof TomeShelfBlockEntity tomeShelfBlockEntity){
-            if (!tomeShelfBlockEntity.isEmpty()){
-                ItemStack tome = tomeShelfBlockEntity.removeItemNoUpdate(tomeShelfBlockEntity.count() -1);
+            if (tomeShelfBlockEntity.count() >= 1){
+                ItemStack tome = tomeShelfBlockEntity.inventory.extractItem(tomeShelfBlockEntity.count() -1, 1, false);
                 player.setItemInHand(InteractionHand.MAIN_HAND, tome);
                 level.playSound(player, pos, SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.BLOCKS, 1f, 1f);
             }

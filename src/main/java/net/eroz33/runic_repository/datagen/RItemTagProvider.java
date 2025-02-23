@@ -30,5 +30,7 @@ public class RItemTagProvider extends ItemTagsProvider {
         tag(ItemTags.PLANKS)
                 .add(RBlocks.ARCANE_PLANKS.get().asItem());
 
+
+
     }
 }

@@ -16,6 +16,12 @@
   "item.runic_repository.runic_core_p": "Runic Core (Purple)",
   "item.runic_repository.runic_core_b": "Runic Core (Blue)",
 
+  "item.runic_repository.arcane_tome": "Arcane Tome (Green)",
+  "item.runic_repository.arcane_tome_tier2": "Arcane Tome (Red)",
+  "item.runic_repository.arcane_tome_tier3": "Arcane Tome (Purple)",
+  "item.runic_repository.arcane_tome_tier4": "Arcane Tome (Blue)",
+
+
   "block.runic_repository.grimoire_block": "Grimoire",
   "block.runic_repository.tome_shelf_block": "Tome Shelf",
 

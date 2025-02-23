@@ -1,5 +1,6 @@
 package net.eroz33.runic_repository.item;
 
+import net.eroz33.runic_repository.item.tomes.RTome;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -23,6 +24,15 @@ public class RItems {
             ITEMS.registerItem("arcane_primer", Item::new, new Item.Properties());
     public static final DeferredItem<Item> ARCANE_QUILL =
             ITEMS.registerItem("arcane_quill", ArcaneQuillItem::new, new Item.Properties());
+
+    public static final DeferredItem<Item> ARCANE_TOME_GREEN =
+            ITEMS.registerItem("arcane_tome", properties -> new RTome(properties, 1024), new Item.Properties());
+    public static final DeferredItem<Item> ARCANE_TOME_RED =
+            ITEMS.registerItem("arcane_tome_tier2", properties -> new RTome(properties, 4096), new Item.Properties());
+    public static final DeferredItem<Item> ARCANE_TOME_PURPLE =
+            ITEMS.registerItem("arcane_tome_tier3", properties -> new RTome(properties, 16384), new Item.Properties());
+    public static final DeferredItem<Item> ARCANE_TOME_BLUE =
+            ITEMS.registerItem("arcane_tome_tier4", properties -> new RTome(properties, 65536), new Item.Properties());
 
     private RItems() { }
 
