@@ -36,6 +36,7 @@ public final class RR
         if (FMLEnvironment.dist == Dist.CLIENT){
             eventBus.addListener(ClientSetup::onClientSetup);
             eventBus.addListener(ClientSetup::onRegisterKeymappings);
+            eventBus.addListener(ClientSetup::registerScreens);
         }
 
         NeoForge.EVENT_BUS.register(new ServerSetup());

@@ -16,8 +16,7 @@ public final class ClientSetup {
 
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent e){
-        // Preform Client only setup
-        ItemBlockRenderTypes.setRenderLayer(RBlocks.GRIMOIRE_BLOCK.get(), RenderType.cutout());
+
     }
 
     @SubscribeEvent
@@ -27,7 +26,6 @@ public final class ClientSetup {
 
     @SubscribeEvent
     public static void registerScreens(RegisterMenuScreensEvent event) {
-        // ✅ Register the Grimoire Screen
         event.register(RMenus.GRIMOIRE_MENU.get(), GrimoireScreen::new);
     }
 }

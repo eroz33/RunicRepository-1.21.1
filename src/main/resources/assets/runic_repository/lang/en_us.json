@@ -25,5 +25,7 @@
   "block.runic_repository.grimoire_block": "Grimoire",
   "block.runic_repository.tome_shelf_block": "Tome Shelf",
 
-  "creativetab.runic_repository": "Runic Repository"
+  "creativetab.runic_repository": "Runic Repository",
+
+  "gui.runic_repository.grimoire": "Grimoire"
 }
