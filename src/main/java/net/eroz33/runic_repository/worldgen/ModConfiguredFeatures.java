@@ -23,10 +23,10 @@ public class ModConfiguredFeatures{
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?,?>> context){
         register(context, ARCANE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(RBlocks.ARCANE_LOG.get()),
-                new StraightTrunkPlacer(4,5,3),
+                new StraightTrunkPlacer(3,2,3),
                 BlockStateProvider.simple(RBlocks.ARCANE_LEAVES.get()),
-                new BlobFoliagePlacer(ConstantInt.of(4), ConstantInt.of(2), 4),
-                new TwoLayersFeatureSize(1,0,2)).build());
+                new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(3), 4),
+                new TwoLayersFeatureSize(4,2,3)).build());
     }
 
     public static ResourceKey<ConfiguredFeature<?,?>> registerKey(String name){
